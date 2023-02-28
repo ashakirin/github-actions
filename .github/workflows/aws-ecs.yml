@@ -36,13 +36,7 @@ env:
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: github-actions           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
-on:
-  workflow_dispatch:
-  workflow_call:
-    inputs:
-      AWS_REGION: { required: true, type: string }
-      AWS_ACCESS_KEY_ID: { required: true, type: string }
-      AWS_SECRET_ACCESS_KEY: { required: true, type: string }
+on: workflow_dispatch
 
 
 jobs:
@@ -74,9 +68,9 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ inputs.AWS_ACCESS_KEY_ID ||  secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ inputs.AWS_SECRET_ACCESS_KEY ||  secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ inputs.AWS_REGION || env.AWS_REGION}}
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
       
     - name: Login to Amazon ECR
       id: login-ecr
