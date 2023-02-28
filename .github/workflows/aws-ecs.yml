@@ -32,24 +32,37 @@ on:
 
 env:
   AWS_REGION: us-west-1                  # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: github-actions           # set this to your Amazon ECR repository name
+  ECR_REPOSITORY: rest-api           # set this to your Amazon ECR repository name
   ECS_SERVICE: MY_ECS_SERVICE                 # set this to your Amazon ECS service name
   ECS_CLUSTER: github-actions                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION # set this to the path to your Amazon ECS task definition
+  IMAGE_TAG: 0.0.1-SNAPSHOT
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: github-actions           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
-permissions:
-  contents: read
-
 jobs:
-  deploy:
-    name: Deploy
+  push:
+    name: Create Docker Image & Push
     runs-on: ubuntu-latest
     environment: production
+    permissions:
+      contents: read
+      packages: write
 
     steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+        settings-path: ${{ github.workspace }} # location for the settings.xml file
+
+    - name: Build with Maven
+      run: mvn clean spring-boot:build-image -Dspring-boot.build-image.imageName=$ECR_REPOSITORY:$IMAGE_TAG
+
     - name: Checkout
       uses: actions/checkout@v3
 
@@ -68,11 +81,10 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        #docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$ECR_REPOSITORY .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
