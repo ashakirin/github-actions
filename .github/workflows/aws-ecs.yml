@@ -73,7 +73,7 @@ jobs:
         aws-access-key-id: ASIAZUW5HRS7A6RE5E7V
         aws-secret-access-key: 7MIwXwxs2xGjw93S4SIPEDEBXWltF/Tep4XmWbn0
         aws-session-token: IQoJb3JpZ2luX2VjEOz//////////wEaCXVzLWVhc3QtMSJHMEUCIDR6E7RIIHvBESO9lRQJzB8c71U48tBzZMfxkvXVn6gOAiEA9LVvnWD0s+kYu2XNEfrmrgP5OkRVPagbPJs9l5wB0zQqqgIIlf//////////ARAAGgw2NjI5NjI2NzA3ODIiDHNpovX4zQRaVj/xKCr+AbEMHHz4h+WkpxfHEtYq8tZhISUlwc7rSh8bmq2rWoi+fkzrtiVjMBvYjv8AsrZ5XkAypPwApWpKP9Zpb5mhZWiy8D4b/oZY4wZ0UeqHDDreS6rsPJySdpqX2wYyhfyXvdPAQ87qlJcpfiyNGIiP8ylLCBGXwCIvwSwT0jrcjwJKZlBGtmhR4q8GnFOwRbeBQUr6MQlg3eyWQsFE3MtIaCiUPaydXXs/VD/zruvIS86W0F76oKD9Y7KrTd+L/wD5YivOgsFA5PR/HgoWGlw1+91c6xuZQ3y6VR+8uxybg3DZHfZoJ1yG8vAQtxAUfI2/q/8N7vvbjLT3dU4bg+CvMJvQ/p8GOp0BgVAmlH8ONWZ2dJWPTcaxp9f/rYQQGAiqc2p/8V51n+F/exzIGvMpa9PRJaPman0McHsX/cnSCP65OmK4LdvI15OcStW+Ku3ihfAWyKG0G4G66dxt93aGTUyK5tpj3NAsp1bZA22UGWjoPOqzJhdGBeZqmzJ8Sda6svpWJJQ4DMXHlHP+gunTVY8+aF8iYaXxYCVL+YHXKpmDH+S+Kg==
-        aws-region: us-west-2
+        aws-region: us-east-1
       
     - name: Login to Amazon ECR Public
       id: login-ecr-public
