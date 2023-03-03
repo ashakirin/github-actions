@@ -71,8 +71,8 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ASIAZUW5HRS7A6RE5E7V
-        aws-secret-access-key: 7MIwXwxs2xGjw93S4SIPEDEBXWltF/Tep4XmWbn0
-        aws-session-token: IQoJb3JpZ2luX2VjEOz//////////wEaCXVzLWVhc3QtMSJHMEUCIDR6E7RIIHvBESO9lRQJzB8c71U48tBzZMfxkvXVn6gOAiEA9LVvnWD0s+kYu2XNEfrmrgP5OkRVPagbPJs9l5wB0zQqqgIIlf//////////ARAAGgw2NjI5NjI2NzA3ODIiDHNpovX4zQRaVj/xKCr+AbEMHHz4h+WkpxfHEtYq8tZhISUlwc7rSh8bmq2rWoi+fkzrtiVjMBvYjv8AsrZ5XkAypPwApWpKP9Zpb5mhZWiy8D4b/oZY4wZ0UeqHDDreS6rsPJySdpqX2wYyhfyXvdPAQ87qlJcpfiyNGIiP8ylLCBGXwCIvwSwT0jrcjwJKZlBGtmhR4q8GnFOwRbeBQUr6MQlg3eyWQsFE3MtIaCiUPaydXXs/VD/zruvIS86W0F76oKD9Y7KrTd+L/wD5YivOgsFA5PR/HgoWGlw1+91c6xuZQ3y6VR+8uxybg3DZHfZoJ1yG8vAQtxAUfI2/q/8N7vvbjLT3dU4bg+CvMJvQ/p8GOp0BgVAmlH8ONWZ2dJWPTcaxp9f/rYQQGAiqc2p/8V51n+F/exzIGvMpa9PRJaPman0McHsX/cnSCP65OmK4LdvI15OcStW+Ku3ihfAWyKG0G4G66dxt93aGTUyK5tpj3NAsp1bZA22UGWjoPOqzJhdGBeZqmzJ8Sda6svpWJJQ4DMXHlHP+gunTVY8+aF8iYaXxYCVL+YHXKpmDH+S+Kg==
+        aws-secret-access-key: GZO1s5/g09RF4T83kDflv65xzwk61rVnOjV3Wc+8
+        aws-session-token: IQoJb3JpZ2luX2VjEAkaCXVzLWVhc3QtMSJIMEYCIQDc3lfJOOBTH4n0mi/2Jp+JTng4/UYU2z4uJOEmhXh+9AIhAO6rDJ8P+VOwhm/TXiV6sS6XZWtJLq4D+Fpg/SQmKXwdKqoCCLL//////////wEQABoMNjYyOTYyNjcwNzgyIgztJe+vxixEjDPmcjkq/gEVFq9TIwmzVMKUXK/aQ1gHQvvE/xreVyKthv6EGu3FWvDTW9vfdG1DmQhyl5NzaJz2U7kbbdSufZoFnifvYSVFy2/IAy2bacmEkz21RIgTamtfWO6RnPZdCwrRZAFJnczuB05Q/EeVNn2mI+SlA0Ggjr5rgiXSmwPsSMBOgggbjFKpRhrtaNAMb5SKSp1HCKQTpgsHhYfzHtN4Jv8PzbAf2Uw2R8FLVr8EYE6iTQ+pDQ4w82thwQss7FYPLhLdxxSS+ZmqCQWzqPVBJ2xMkrTczPgOABsuj7t64GKVUgUapxErShhBRpyaKRZYH9ZsZ9EtscfcEzsZb1siUUTXzzD2+4SgBjqcAZEKF8nLfb1CCO3EgRh+HHx2hnC4sHl23KyDkcRLsn+tOpwg9JC3tAwi04yPSvT9ohBVVPuD0HzGxD11duYCjR3UhXp+08Z4CQzhXTsGUuvE82nxe2uj+/r87TqT+zl3ri57gmj8AcNyR/rvMvirGBuMbEWoBF2LGOeGIhTB2IkXeYonQpJ6LY4iDcg/zES9w2nDnycw12393wIm9w==
         aws-region: us-east-1
       
     - name: Login to Amazon ECR Public
